@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENGAGE WITH NEPAL</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="icon" type="image/x-icon" href="/photos/logo-ews.png">
+    <link rel="icon" type="image/x-icon" href="photos/logo-ews.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         
@@ -57,7 +57,7 @@
         
     }
     .parallax {
-  background-image: url("/photos/giphy.gif");
+  background-image: url("photos/giphy.gif");
 
   opacity: 0.5;
   min-height: 500px;
@@ -69,7 +69,7 @@
   background-size: cover;
 }
 .e {
-  background-image: url("/photos/weirdscience_12.gif");
+  background-image: url("photos/weirdscience_12.gif");
   opacity: 0.5
   ;
   
@@ -82,7 +82,7 @@
   background-size: cover;
 }
 .f {
-  background-image: url("/photos/R.gif");
+  background-image: url("photos/R.gif");
   opacity: 0.5
   ;
   
@@ -100,7 +100,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <div class="main">
         <div class="one">
-          <a href="logindex.html"><img src="/photos/logo-ews.png" style="width: 100px; height: 65px;background-color: darkgrey;"></a>
+          <a href="logindex.html"><img src="photos/logo-ews.png" style="width: 100px; height: 65px;background-color: darkgrey;"></a>
        <a href="logindex.html"> <button type="button" class="btn btn-outline-success">Home</button></a>
        <a href="logabout.html"> <button type="button" class="btn btn-outline-success">About Us</button></a>
        <a href="logpartners.html"> <button type="button" class="btn btn-outline-success">Partners</button></a>
@@ -143,6 +143,33 @@
        <a href="logged.html"> <button type="button" class="btn btn-outline-success abc">Log In</button></a>
        <a href="logcontact.html"> <button type="button" class="btn btn-outline-success abc">Contact</button></a>
        <a href="lognews.html"> <button type="button" class="btn btn-outline-success abc">News</button></a> </div>
+       <button onclick="toggleTheme()" type="button" class="btn btn-outline-success abc">Toggle Theme</button>
+
+<div id="myNewModal" class="new-modal">
+  <div class="new-modal-content">
+    <h1>New Modal Title</h1>
+    <p>This is the content of the new modal.</p>
+  </div>
+</div>
+
+<script>
+    function toggleTheme() {
+        var body = document.body;
+        body.classList.toggle("dark");
+        body.classList.toggle("light");
+    }
+</script>
+  </div>
+</div>
+
+<script>
+    function toggleTheme() {
+        var body = document.body;
+        body.classList.toggle("dark");
+        body.classList.toggle("light");
+    }
+</script>
+    </div>
     </div>
     <h1>Student Hub</h1>
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENGAGE WITH NEPAL</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <link rel="icon" type="image/x-icon" href="/photos/logo-ews.png">
+    <link rel="icon" type="image/x-icon" href="photos/logo-ews.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <style>
@@ -20,53 +20,31 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
         }
         .container {
-            max-width: 600px;
-            margin: 20px auto;
+            max-width: 800px;
+            margin: 0 auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1, h2 {
-            text-align: center;
-            color: #333;
+        .profile-img {
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            margin: 5px 0;
         }
         p {
-            color: #666;
-            margin-top: 10px;
-        }
-        form {
-            margin-top: 20px;
-        }
-        form input[type="text"],
-        form input[type="email"],
-        form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        form button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            margin: 5px 0;
         }
 </style>
 <body style="background-color: rgb(225, 240, 218)">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <div class="main">
         <div class="one">
-            <a href="logindex.html"><img src="/photos/logo-ews.png" style="width: 100px; height: 65px;background-color: darkgrey;"></a>
+            <a href="logindex.html"><img src="photos/logo-ews.png" style="width: 100px; height: 65px;background-color: darkgrey;"></a>
        <a href="logindex.html"> <button type="button" class="btn btn-outline-success">Home</button></a>
        <a href="logabout.html"> <button type="button" class="btn btn-outline-success">About Us</button></a>
        <a href="logpartners.html"> <button type="button" class="btn btn-outline-success">Partners</button></a>
@@ -106,44 +84,58 @@
         <a href="logchatbot.html"><button type="button" class="btn btn-outline-dark ">Chat Bot</button></a>
               </div>
             <div class="three">
-       <a href="logged.html"> <button type="button" class="btn btn-outline-success abc">Log In</button></a>
-       <a href="logcontact.html"> <button type="button" class="btn btn-outline-success abc">Contact</button></a>
-       <a href="lognews.html"> <button type="button" class="btn btn-outline-success abc">News</button></a> </div>
+                <a href="logged.html"> <button type="button" class="btn btn-outline-success abc">Log In</button></a>
+                <a href="logcontact.html"> <button type="button" class="btn btn-outline-success abc">Contact</button></a>
+                <a href="lognews.html"> <button type="button" class="btn btn-outline-success abc">News</button></a> 
+                <button onclick="toggleTheme()" type="button" class="btn btn-outline-success abc">Toggle Theme</button>
+         
+                <div id="myNewModal" class="new-modal">
+                  <div class="new-modal-content">
+                    <h1>New Modal Title</h1>
+                    <p>This is the content of the new modal.</p>
+                  </div>
+                </div>
+                
+                <script>
+                    function toggleTheme() {
+                        var body = document.body;
+                        body.classList.toggle("dark");
+                        body.classList.toggle("light");
+                    }
+                </script>
+                    </div></div>
+             </div>
+
+<h1 style="text-align: center;">Account Info:</h1>
+<div class="container" style="text-align: center; background-color: whitesmoke;">
+    <div class="profile" >
+        <img src="photos/BIplav_PP Size Pic.jpg" alt="Your Photo" class="profile-img">
+        <h1>Your Name:</h1>
+        <p>Biplab Basnet</p>
+    </div>
+    <div class="section">
+        <h2>About You:</h2>
+        <p>Student from Bright Future School. I have a dream of inventing something great for science.</p>
+    </div>
+    <div class="section">
+        <h2>Education:</h2>
+        <p>Currently in Grade 10.</p>
+    </div>
+    <div class="section">
+        <h2>School Name:</h2>
+        <p>Bright Future Secondary School</p>
+    </div>
+    <div class="section">
+        <h2>School Contact Info:</h2>
+        <p>0127469, 1012831 Naikap, Kathmandu</p>
+    </div>
+    <div class="section">
+        <h2>Contact Information:</h2>
+        <p>Email: biplabbasnet07@gmail.com<br>Phone: 81873192</p>
     </div>
 </div>
-<br>
-<br>
-<div class="container">
-    <h1>Contact Us</h1>
-    <p>If you have any questions or inquiries, please feel free to get in touch with us using the form below:</p>
-    <form id="contactForm">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</div>
-
-<script>
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        
-        event.preventDefault();
-
-      
-        var formData = new FormData(this);
-
-
-       
-        window.location.href = 'logcong.html';
-    });
-</script>
-<br>
-          <br>
-          <br>
-          <br>
-          <h1>Here's Our Social Media: <br>
-        <a href="https://www.facebook.com/EngageNepalwithScience/"><img src="/photos/th.jpg" alt=""></a> <a href="https://twitter.com/engagenepalsci"><img src="/photos/tw.jpg" style="width: 190px;"></a> <a href="https://instagram.com/engage_nepal_with_science"> <img src="/photos/ins.jpg" style="width: 150px;"></a></h1>
-        <button onclick="speak()" style="background-color: aqua;">Speak</button>
+<h1 style="text-align: center;">Want to log out? <a href="./log.html">Click Here</a></h1>
+<button onclick="speak()" style="background-color: aqua;">Speak</button>
     <button onclick="stopSpeaking()" style="background-color: aqua;">Stop</button>
 
     <script>

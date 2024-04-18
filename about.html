@@ -63,6 +63,23 @@
        <a href="log.html"> <button type="button" class="btn btn-outline-success abc">Log In</button></a>
        <a href="contact.html"> <button type="button" class="btn btn-outline-success abc">Contact</button></a>
        <a href="news.html"> <button type="button" class="btn btn-outline-success abc">News</button></a>
+       <button onclick="toggleTheme()" type="button" class="btn btn-outline-success abc">Toggle Theme</button>
+
+<div id="myNewModal" class="new-modal">
+  <div class="new-modal-content">
+    <h1>New Modal Title</h1>
+    <p>This is the content of the new modal.</p>
+  </div>
+</div>
+
+<script>
+    function toggleTheme() {
+        var body = document.body;
+        body.classList.toggle("dark");
+        body.classList.toggle("light");
+    }
+</script>
+    </div>
     </div>
     
 </div>
