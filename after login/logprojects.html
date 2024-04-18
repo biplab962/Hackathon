@@ -23,6 +23,8 @@
         }
         h1 {
             text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
         }
         #project-form {
             margin-bottom: 20px;
@@ -53,7 +55,7 @@
         }
     
 </style>
-<body style="background-color: rgb(225, 222, 227)">
+<body style="background-color: rgb(225, 240, 218)">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <div class="main">
         <div class="one">
@@ -61,90 +63,88 @@
        <a href="logindex.html"> <button type="button" class="btn btn-outline-success">Home</button></a>
        <a href="logabout.html"> <button type="button" class="btn btn-outline-success">About Us</button></a>
        <a href="logpartners.html"> <button type="button" class="btn btn-outline-success">Partners</button></a>
+       <button onclick="openModal()" type="button" class="btn btn-outline-success">Language</button>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <h1>Select a Language</h1>
+    <select name="" id="languageSelect"> 
+        <option value="en">English</option>
+        <option value="ar">Arabic(عربي)</option>
+        <option value="fr">French(française)</option>
+        <option value="np">Nepali(नेपाली)</option>
+        <option value="hn">Hindi(हिंदी)</option>
+        <option value="ci">Chinese(中国人)</option>
+        <option value="ru">Russian(русский)</option>
+        <option value="sp">Spanish(española)</option>
+    </select>
+  </div>
+</div>
+
+<script>
+    function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    });
+</script>
        </div>
-       <div class="two">
-        <a href="logprojects.html"><button type="button" class="btn btn-outline-dark" >Projects</button></a>
-        <a href="loginter.html"><button type="button" class="btn btn-outline-dark">Interactive Hub</button></a>      
-        <a href="logchatbot.html"><button type="button" class="btn btn-outline-dark ">Chat Bot</button></a>
-              </div>
+        <div class="two">
+            <a href="logprojects.html"><button type="button" class="btn btn-outline-dark" >Projects</button></a>
+            <a href="loginter.html"><button type="button" class="btn btn-outline-dark">Interactive Hub</button></a>      
+            <a href="logchatbot.html"><button type="button" class="btn btn-outline-dark ">Chat Bot</button></a>
+            </div>
             <div class="three">
-       <a href="logged.html"> <button type="button" class="btn btn-outline-success abc">Log In</button></a>
-       <a href="logcontact.html"> <button type="button" class="btn btn-outline-success abc">Contact</button></a>
-       <a href="lognews.html"> <button type="button" class="btn btn-outline-success abc">News</button></a>
-    </div>
-    </div>
-<h1>Organization Projects</h1>
-
-    
-    <form id="project-form">
-        <textarea name="project-description" placeholder="Enter your project description"></textarea><br>
-        <input type="submit" value="Submit Project" style="display: flex;justify-content: center;align-items: center;">
-    </form>
-
-    
-    <div id="project-list" >
-        
-        <div class="project" style="background-color: greenyellow;">
-            <p><h1>Green Detectives</h1> <br>
-            <h4 style="text-align: center;">-By Mega(Mount View School)</h4>
-            <h2>Badges: <img src="/photos/badge1.png" alt=""> <img src="/photos/badge2.png" alt=""></h2><br>
-                The project is a school program including a workshop, a virtual game (Green Detectives) and a competition.
-
- 
-
-                Green Detectives is a graphic adventure in which students will become detectives that will go through tests/puzzles/quizzes on different topics (plant/animal evolution, landscape evolution/changes, water/rivers and social evolution) before they get to the final test: finding examples of climate change effects on evolution, photographing them and uploading them to the game.</p>
-              <img src="/photos/green.jpeg" alt="" style="display: block; margin-left: auto; margin-right: auto;">  
-            <div class="project-actions">
-                <button><img src="/photos/com.jpg" alt="" style="width: 35px;"></button>
-                <button><img src="/photos/up.jpg" alt="" style="width: 35px;"></button>
-                <button><img src="/photos/sh.jpg" alt="" style="width: 35px;"></button>
-            </div>
-        </div>
-
-        
-        <div class="project" style="background-color: greenyellow;">
-            <p><h1>Building bird houses <br></h1>
-                <h4 style="text-align: center;">-By Sachin(Niharika School)</h4>
-                <h2>Badges: <img src="/photos/badge1.png" alt=""> <img src="/photos/badge2.png" alt=""></h2><br>
-                This workshop explores the importance of birds in our ecosystems, how birds can be sensors of changes in weather patterns and climate change and covers how to build bird houses using re-used materials.</p>
-              <img src="/photos/bird.jpg" alt="" style="display: block; margin-left: auto; margin-right: auto;width: 500px; ">  
-            <div class="project-actions">
-                <button><img src="/photos/com.jpg" alt="" style="width: 35px;"></button>
-                <button><img src="/photos/up.jpg" alt="" style="width: 35px;"></button>
-                <button><img src="/photos/sh.jpg" alt="" style="width: 35px;"></button>
-            </div>
-        </div>
-
-
-
-    </div>
-    <button onclick="speak()" style="background-color: aqua;">Speak</button>
-    <button onclick="stopSpeaking()" style="background-color: aqua;">Stop</button>
-
-    <script>
-        let speech = null;
-
-        function speak() {
-            if (speech && speech.paused) {
-                speech.resume();
-                return;
-            }
-
-            let text = '';
-            document.querySelectorAll('body *:not(script):not(style)').forEach(element => {
-                text += element.textContent + ' ';
-            });
-
-            speech = new SpeechSynthesisUtterance(text);
-            window.speechSynthesis.speak(speech);
-        }
-
-        function stopSpeaking() {
-            if (speech) {
-                speech.onend = null;
-                window.speechSynthesis.cancel();
-            }
-        }
-    </script>
+                <a href="logged.html"> <button type="button" class="btn btn-outline-success abc">Log In</button></a>
+                <a href="logcontact.html"> <button type="button" class="btn btn-outline-success abc">Contact</button></a>
+                <a href="lognews.html"> <button type="button" class="btn btn-outline-success abc">News</button></a>
+             </div>
+             </div>
+         <h1>Organization Projects</h1>
+         
+             
+             <form id="project-form">
+                 <textarea name="project-description" placeholder="Enter your project description"></textarea><br>
+                 <input type="submit" value="Submit Project" style="display: flex;justify-content: center;align-items: center;">
+             </form>
+         
+             
+             <div id="project-list" >
+                 
+                 <div class="project" style="background-color: rgb(191, 216, 175);">
+                     <p><h1 style="font-family: 'Times New Roman', Times, serif;">Green Detectives</h1> <br>
+                     <h4 style="text-align: center; font-family: 'Times New Roman', Times, serif;">-By Mega(Mount View School)</h4>
+                     <h2 style="font-family: 'Times New Roman', Times, serif;">Badges:<img src="/photos/badge1.png" alt=""> <img src="/photos/badge2.png" alt=""></h2><br>
+                        <p style="font-family: Georgia, 'Times New Roman', Times, serif;"> The project is a school program including a workshop, a virtual game (Green Detectives) and a competition.
+         
+          
+         
+                         Green Detectives is a graphic adventure in which students will become detectives that will go through tests/puzzles/quizzes on different topics (plant/animal evolution, landscape evolution/changes, water/rivers and social evolution) before they get to the final test: finding examples of climate change effects on evolution, photographing them and uploading them to the game.</p>
+                         <img src="/photos/green.jpeg" alt="" style="display: block; margin-left: auto; margin-right: auto;">  
+                       <div class="project-actions">
+                           <button><img src="/photos/com.jpg" alt="" style="width: 35px;"></button>
+                           <button><img src="/photos/up.jpg" alt="" style="width: 35px;"></button>
+                           <button><img src="/photos/sh.jpg" alt="" style="width: 35px;"></button>
+                       </div>
+                   </div>
+           
+                   
+                   <div class="project" style="background-color: rgb(191, 216, 175)">
+                       <p><h1>Building bird houses <br></h1>
+                           <h4 style="text-align: center; font-family: 'Times New Roman', Times, serif;">-By Sachin(Niharika School)</h4>
+                           <h2 style="font-family: 'Times New Roman', Times, serif;">Badges: <img src="/photos/badge1.png" alt=""> <img src="/photos/badge2.png" alt=""></h2><br>
+                         <p style="font-family: Georgia, 'Times New Roman', Times, serif;">  This workshop explores the importance of birds in our ecosystems, how birds can be sensors of changes in weather patterns and climate change and covers how to build bird houses using re-used materials.</p>
+                         <img src="/photos/bird.jpg" alt="" style="display: block; margin-left: auto; margin-right: auto;width: 500px; ">  
+                       <div class="project-actions">
+                           <button><img src="/photos/com.jpg" alt="" style="width: 35px;"></button>
+                           <button><img src="/photos/up.jpg" alt="" style="width: 35px;"></button>
+                           <button><img src="/photos/sh.jpg" alt="" style="width: 35px;"></button>
+                       </div>
+                   </div>
+             </div>
 </body>
 </html>

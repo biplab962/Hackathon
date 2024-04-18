@@ -62,7 +62,7 @@
             cursor: pointer;
         }
 </style>
-<body style="background-color: rgb(225, 222, 227)">
+<body style="background-color: rgb(225, 240, 218)">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <div class="main">
         <div class="one">
@@ -70,6 +70,35 @@
        <a href="logindex.html"> <button type="button" class="btn btn-outline-success">Home</button></a>
        <a href="logabout.html"> <button type="button" class="btn btn-outline-success">About Us</button></a>
        <a href="logpartners.html"> <button type="button" class="btn btn-outline-success">Partners</button></a>
+       <button onclick="openModal()" type="button" class="btn btn-outline-success">Language</button>
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <h1>Select a Language</h1>
+    <select name="" id="languageSelect"> 
+        <option value="en">English</option>
+        <option value="ar">Arabic(عربي)</option>
+        <option value="fr">French(française)</option>
+        <option value="np">Nepali(नेपाली)</option>
+        <option value="hn">Hindi(हिंदी)</option>
+        <option value="ci">Chinese(中国人)</option>
+        <option value="ru">Russian(русский)</option>
+        <option value="sp">Spanish(española)</option>
+    </select>
+  </div>
+</div>
+
+<script>
+    function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+    }
+
+    document.getElementById("languageSelect").addEventListener("change", function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    });
+</script>
     </div>
     <div class="two">
         <a href="logprojects.html"><button type="button" class="btn btn-outline-dark" >Projects</button></a>
