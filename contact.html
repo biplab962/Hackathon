@@ -95,15 +95,13 @@
 
 <script>
     document.getElementById('contactForm').addEventListener('submit', function(event) {
-        // Prevent the default form submission
-        event.preventDefault();
+       
 
-        // Get form data
+       
         var formData = new FormData(this);
 
-        // You can process the form data here if needed
 
-        // Redirect to thank-you.html
+       
         window.location.href = 'cong.html';
     });
 </script>
@@ -113,5 +111,33 @@
           <br>
           <h1>Here's Our Social Media: <br>
         <a href="https://www.facebook.com/EngageNepalwithScience/"><img src="photos/th.jpg" alt=""></a> <a href="https://twitter.com/engagenepalsci"><img src="photos/tw.jpg" style="width: 190px;"></a> <a href="https://instagram.com/engage_nepal_with_science"> <img src="photos/ins.jpg" style="width: 150px;"></a></h1>
+        <button onclick="speak()" style="background-color: aqua;">Speak</button>
+    <button onclick="stopSpeaking()" style="background-color: aqua;">Stop</button>
+
+    <script>
+        let speech = null;
+
+        function speak() {
+            if (speech && speech.paused) {
+                speech.resume();
+                return;
+            }
+
+            let text = '';
+            document.querySelectorAll('body *:not(script):not(style)').forEach(element => {
+                text += element.textContent + ' ';
+            });
+
+            speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+
+        function stopSpeaking() {
+            if (speech) {
+                speech.onend = null;
+                window.speechSynthesis.cancel();
+            }
+        }
+    </script>
 </body>
 </html>

@@ -106,5 +106,33 @@
       <div class="hg"><a href="news.html"><button type="button" class="btn btn-outline-success ">READ MORE</button></a></div>
      </p> </div>
      <img src="photos/work.jpg" alt="pic" class="center">
+     <button onclick="speak()" style="background-color: aqua;">Speak</button>
+    <button onclick="stopSpeaking()" style="background-color: aqua;">Stop</button>
+
+    <script>
+        let speech = null;
+
+        function speak() {
+            if (speech && speech.paused) {
+                speech.resume();
+                return;
+            }
+
+            let text = '';
+            document.querySelectorAll('body *:not(script):not(style)').forEach(element => {
+                text += element.textContent + ' ';
+            });
+
+            speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+
+        function stopSpeaking() {
+            if (speech) {
+                speech.onend = null;
+                window.speechSynthesis.cancel();
+            }
+        }
+    </script>
 </body>
 </html>

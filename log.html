@@ -49,5 +49,33 @@
       </div>
       <h2><div style="align-items: center; text-align: center;">
     Are you a Teacher? <a href="./tlog.html">Click Me</a></div></h2>
+    <button onclick="speak()" style="background-color: aqua;">Speak</button>
+    <button onclick="stopSpeaking()" style="background-color: aqua;">Stop</button>
+
+    <script>
+        let speech = null;
+
+        function speak() {
+            if (speech && speech.paused) {
+                speech.resume();
+                return;
+            }
+
+            let text = '';
+            document.querySelectorAll('body *:not(script):not(style)').forEach(element => {
+                text += element.textContent + ' ';
+            });
+
+            speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+
+        function stopSpeaking() {
+            if (speech) {
+                speech.onend = null;
+                window.speechSynthesis.cancel();
+            }
+        }
+    </script>
 </body>
 </html>

@@ -63,7 +63,7 @@
        <a href="logpartners.html"> <button type="button" class="btn btn-outline-success">Partners</button></a>
     </div>
     <div class="two">
-              <button type="button" class="btn btn-outline-dark " style="color: black;">Hello</button>
+        <a href="logchatbot.html"><button type="button" class="btn btn-outline-dark " style="color: black;">Chat Bot</button></a>
             </div>
             <div class="three">
        <a href="logged.html"> <button type="button" class="btn btn-outline-success abc">Log In</button></a>
@@ -93,5 +93,33 @@
             </div>
         </div>
     </div>
+    <button onclick="speak()" style="background-color: aqua;">Speak</button>
+    <button onclick="stopSpeaking()" style="background-color: aqua;">Stop</button>
+
+    <script>
+        let speech = null;
+
+        function speak() {
+            if (speech && speech.paused) {
+                speech.resume();
+                return;
+            }
+
+            let text = '';
+            document.querySelectorAll('body *:not(script):not(style)').forEach(element => {
+                text += element.textContent + ' ';
+            });
+
+            speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+
+        function stopSpeaking() {
+            if (speech) {
+                speech.onend = null;
+                window.speechSynthesis.cancel();
+            }
+        }
+    </script>
 </body>
 </html>

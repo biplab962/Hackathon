@@ -40,6 +40,33 @@
 <h1 style="text-align: center;">Congratulations! Your message has been sent! <br>
 We will contact You by your E-mail.</h1>
 <div class="main" style="display: flex; align-items: center; justify-content: center;"><a href="index.html"> <button type="button" class="btn btn-outline-success main">Go To Home</button></a></div>
-    
+<button onclick="speak()" style="background-color: aqua;">Speak</button>
+<button onclick="stopSpeaking()" style="background-color: aqua;">Stop</button>
+
+<script>
+    let speech = null;
+
+    function speak() {
+        if (speech && speech.paused) {
+            speech.resume();
+            return;
+        }
+
+        let text = '';
+        document.querySelectorAll('body *:not(script):not(style)').forEach(element => {
+            text += element.textContent + ' ';
+        });
+
+        speech = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(speech);
+    }
+
+    function stopSpeaking() {
+        if (speech) {
+            speech.onend = null;
+            window.speechSynthesis.cancel();
+        }
+    }
+</script>
 </body>
 </html>
